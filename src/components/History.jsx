@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './components.css'
 import Histories from './Histories'
 function History() {
-  const [histories, setHistories] = useState('');
+  const [histories, setHistories] = useState([]);
 
-  function Gohome() {
-    // back to top page
-
-  }
+  const navigate = useNavigate();
+  const navigateToHome = () => {
+    navigate('/');
+  };
   
   function getHistories() {
-    const result = 'this is test of history';
+    const result = [{id: 1234, content: 'this is test of history1'}, {id: 2345, content: 'this is test of history2'}];
     setHistories(result)
   }
 
@@ -19,9 +20,9 @@ function History() {
   return (
     <>
       {histories? 
-      <Histories />:
+      <Histories histories={histories}/>:
       <div>There is no history yet</div>}
-      <button onClick={Gohome}>Exit</button>
+      <button onClick={navigateToHome}>Exit</button>
     </>
   )
 }

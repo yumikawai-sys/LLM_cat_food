@@ -1,18 +1,26 @@
-// import { useState } from 'react'
-// import propTypes from "prop-types";
-import './components.css'
+import { useState, useEffect } from 'react';
+import PropTypes from "prop-types";
+import './components.css';
 
-function Histories() {
-//   const [showBottom, setshowBottom] = useState(false)
+function Histories({ histories }) {
+  const [historyContent, setHistoryContent] = useState([]);
+
+  useEffect(() => {
+    function getHistories() {
+      setHistoryContent(histories);
+    }
+    getHistories();
+  }, [histories]); 
 
   return (
     <>
-      Histories
+      {historyContent.map(x => <div key={x.id}>{x.id}</div>)}
     </>
-  )
+  );
 }
 
 Histories.propTypes = {
-    // showBottom: Main.any.isRequired,
-}
-export default Histories
+  histories: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
+
+export default Histories;

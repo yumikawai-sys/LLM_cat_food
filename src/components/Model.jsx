@@ -1,34 +1,37 @@
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import './components.css'
 
-function Topmenu() {
-
+function Model() {
+    const [reportresult, setreportresult] = useState('');
     const navigate = useNavigate();
     const navigateToHome = () => {
       navigate('/');
     };
-    const navigateToReport = () => {
-      navigate('/getReport');
-    };
+    
+    function callmodel() {
+        const result = 'temp result';
+        setreportresult(result);
+    }
 
-    const navigateToHistory = () => {
-        navigate('/history');
-    };
+    useEffect(()=>callmodel, [])
 
   return (
     <>
       <button id="menult" onClick={navigateToHome}><div className="menuName"><FontAwesomeIcon icon={faHome} /></div></button>
       <main>
-        <h2>Welcome to Business Report!</h2>
         <div className='main-menu'>
-            <button onClick={navigateToReport}>New Report</button>
-            <button onClick={navigateToHistory}>View Existing Reports</button>
+            {!reportresult?
+            <h2>Loading... please wait</h2>:
+            <div className='report-area'>{reportresult}</div>    
+            }
         </div>
       </main>
+      <button onClick={navigateToHome}>Exit</button>
     </>
   )
 }
 
-export default Topmenu
+export default Model
