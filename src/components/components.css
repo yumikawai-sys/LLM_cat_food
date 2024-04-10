@@ -1,0 +1,66 @@
+main {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    margin-bottom: 50px;
+}
+
+.main-menu {
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#buttons {
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+    border: 2px solid rgb(80, 26, 73);
+    font-size: 16px;
+    color: rgb(80, 26, 73);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.report-area {
+    width: 1800px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary-text {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    background-color:  rgb(247, 230, 242);
+    opacity: 0.8;
+}
+.graph {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    background-color:  rgb(247, 230, 242);
+    opacity: 0.8;
+}
+
+#exit {
+    margin-left: 1400px;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid rgb(80, 26, 73);
+    font-size: 16px;
+    color: rgb(80, 26, 73);
+    font-weight: 200;
+    cursor: pointer;
+}

@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './components.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 import Histories from './Histories'
+
 function History() {
   const [histories, setHistories] = useState([]);
 
@@ -19,10 +22,13 @@ function History() {
 
   return (
     <>
-      {histories? 
-      <Histories histories={histories}/>:
-      <div>There is no history yet</div>}
-      <button onClick={navigateToHome}>Exit</button>
+      <button id="menult" onClick={navigateToHome}><div className="menuName"><FontAwesomeIcon icon={faHome} /></div></button>
+      <main>
+        {histories? 
+        <Histories histories={histories}/>:
+        <div>There is no history yet</div>}
+      </main>
+      <button id="exit" onClick={navigateToHome}>Exit</button>
     </>
   )
 }

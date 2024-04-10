@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 from flask_cors import CORS, cross_origin
 import requests
+from sentiment import sentiment_analysis
 
 app = Flask(__name__)
 # CORS(app) * still seeing CORS
@@ -8,8 +9,8 @@ CORS(app, origins='http://localhost:5173')
 
 @app.route('/summarize', methods=['GET'])
 def summarize_endpoint():
-    summary = get_summary_from_colab()
-    return jsonify({'summary': summary})
+    summary, emotions = get_summary_from_colab()
+    return jsonify({'summary': summary, 'emotions': emotions})
 
 def get_summary_from_colab():
     # colab_endpoint = 'https://colab.research.google.com/drive/1jKyb5vSthLoEmhaUySueKrCQof9bwdpc/summarize'
@@ -18,8 +19,10 @@ def get_summary_from_colab():
     # summary = data['summary']
 
     # For demo....
-    summary = 'test summary'
-    return summary
+    summary = 'I am very happy about this product.'
+    emotions = sentiment_analysis(summary)
+
+    return summary, emotions
 
 
 @app.route("/")

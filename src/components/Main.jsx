@@ -22,10 +22,10 @@ function Main() {
     <>
       <button id="menult" onClick={navigateToHome}><div className="menuName"><FontAwesomeIcon icon={faHome} /></div></button>
       <main>
+        <h2>Did you upload customer review?</h2>
         <div className='main-menu'>
-            <h2>Did you upload customer review?</h2>
-            <button onClick={navigateToModel}>Yes</button>
-            <button onClick={navigateToUpload}>No</button>
+            <button id="buttons" onClick={navigateToModel}>Yes</button>
+            <button id="buttons" onClick={navigateToUpload}>No</button>
         </div>
       </main>
     </>
