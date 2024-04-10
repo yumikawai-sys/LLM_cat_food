@@ -30,7 +30,11 @@ function Model() {
             {!reportresult?
             <h2>Loading... please wait</h2>:
             <div className='report-area'>
-              <div className='summary-text'>{reportresult}</div>
+              <div className='summary-text'>
+                <div className='summarytext-area'>
+                  <p>{reportresult}</p>
+                </div>
+              </div>
               <div className='graph'>
                 <PieChart keywords={keywords}/>
               </div>

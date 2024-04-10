@@ -33,20 +33,32 @@ h2 {
     height: 600px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .summary-text {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 600px;
     display: flex;
     align-items: center;
     background-color:  rgb(247, 230, 242);
     opacity: 0.8;
 }
+
+.summarytext-area {
+    width: 480px;
+    height: 590px;
+    border: 1px solid rgb(248, 195, 232);
+    color: rgb(80, 26, 73);
+    margin: 10px;
+}
+.summarytext-area p {
+    color: rgb(80, 26, 73);
+}
+
 .graph {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 600px;
     display: flex;
     align-items: center;
     background-color:  rgb(247, 230, 242);
