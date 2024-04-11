@@ -14,7 +14,7 @@ function Histories({ histories }) {
 
   return (
     <>
-      {historyContent.map(x => <div key={x.id}>{x.id}</div>)}
+      {historyContent.map(x => <div key={x.id}>{x.content}</div>)}
     </>
   );
 }

@@ -1,7 +1,13 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 import requests
 from sentiment import sentiment_analysis
+import pickle
+from gradientai import Gradient
+import os
+
+os.environ['GRADIENT_ACCESS_TOKEN'] = "OqLq3ZTkNbj2FVlsWxUA9HuFbktEtxVA"
+os.environ['GRADIENT_WORKSPACE_ID'] = "d0cf43aa-349e-48e0-8dfa-7195e68845a8_workspace"
 
 app = Flask(__name__)
 # CORS(app) * Specify 5173' CORS(app) is not enough
@@ -28,6 +34,39 @@ def get_summary_from_colab():
 
     return jsonify(result)
 
+@app.route('/chat', methods=['GET'])
+def get_chat():
+    try:
+        # Load the ID
+        with open("fine_tuned_model_adapter_id.pkl", "rb") as f:
+            model_adapter_id = pickle.load(f)
+        
+        print('test1', model_adapter_id)
+        
+        # Retrieve the model adapter using its ID
+        gradient = Gradient()
+        fine_tuned_model_adapter = gradient.get_model_adapter(model_adapter_id=model_adapter_id)
+        
+        print('test2')
+        
+        # Example question
+        # question = "What is the best cat food for senior cats?"
+
+        # Get question from frontend
+        question = request.args.get('question', '')
+        if not question:
+                raise ValueError("No question provided")
+        print('question', question)
+        
+        # Use the fine-tuned model adapter to generate a response
+        response = fine_tuned_model_adapter.complete(query=question, max_generated_token_count=100).generated_output
+        print("Response:", response)
+
+        return jsonify(response)
+    
+    except Exception as e:
+        print("Error:", e)
+        return jsonify({"error": str(e)})
 
 @app.route("/")
 def index():

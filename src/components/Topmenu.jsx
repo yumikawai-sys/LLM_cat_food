@@ -9,6 +9,11 @@ function Topmenu() {
     const navigateToHome = () => {
       navigate('/');
     };
+
+    const navigateToChat = () => {
+      navigate('/gotoChat');
+    };
+
     const navigateToReport = () => {
       navigate('/getReport');
     };
@@ -19,12 +24,18 @@ function Topmenu() {
 
   return (
     <>
-      <button id="menult" onClick={navigateToHome}><div className="menuName"><FontAwesomeIcon icon={faHome} /></div></button>
+      <div className='topbar'>
+        <button id="menult" style={{ fontSize: '24px', padding: '10px' }} onClick={navigateToHome}><div className="menuName"><FontAwesomeIcon icon={faHome} /></div></button>
+        <h3>Best Cat Food Finder</h3>
+        <img id='top-cat' src='cat-clear.png'></img>
+      </div>
+      
       <main>
-        <h2>Welcome to the Summary of Customer Review !</h2>
+        <h2>Let&apos;s find the best cat food !</h2>
         <div className='main-menu'>
-            <button id="buttons" onClick={navigateToReport}>New Summary</button>
-            <button id="buttons" onClick={navigateToHistory}>View Existing Summaries</button>
+            <button id="buttons" onClick={navigateToChat}>Ask Questions</button>
+            <button id="buttons" onClick={navigateToReport}>Customer Reviews</button>
+            <button id="buttons" onClick={navigateToHistory}>View Existing Reviews</button>
         </div>
       </main>
     </>

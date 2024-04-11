@@ -14,7 +14,7 @@ function History() {
   };
   
   function getHistories() {
-    const result = [{id: 1234, content: 'this is test of history1'}, {id: 2345, content: 'this is test of history2'}];
+    const result = [{id: 1234, content: 'This is test of history1'}, {id: 2345, content: 'This is test of history2'}];
     setHistories(result)
   }
 
@@ -22,7 +22,11 @@ function History() {
 
   return (
     <>
-      <button id="menult" onClick={navigateToHome}><div className="menuName"><FontAwesomeIcon icon={faHome} /></div></button>
+      <div className='topbar'>
+        <button id="menult" style={{ fontSize: '24px', padding: '10px' }} onClick={navigateToHome}><div className="menuName"><FontAwesomeIcon icon={faHome} /></div></button>
+        <h3>Best Cat Food Finder</h3>
+        <img id='top-cat' src='cat-clear.png'></img>
+      </div>
       <main>
         {histories? 
         <Histories histories={histories}/>:

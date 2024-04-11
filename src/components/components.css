@@ -1,5 +1,5 @@
 main {
-    height: 85vh;
+    height: 78vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +26,7 @@ h2 {
     color: rgb(80, 26, 73);
     font-weight: 400;
     cursor: pointer;
-    box-shadow: 5px 10px #888888;
+    box-shadow: 3px 6px #747474;
 }
 
 .report-area {
@@ -42,7 +42,6 @@ h2 {
     height: 600px;
     display: flex;
     align-items: center;
-    background-color:  rgb(247, 230, 242);
     opacity: 0.8;
 }
 
@@ -53,8 +52,13 @@ h2 {
     margin: 10px;
     padding: 5px;
 }
+
+.summarytext-area h2 {
+    margin-left: 10px;
+}
+
 .summarytext-area p {
-    color: rgb(169, 6, 148);
+    color: rgb(65, 54, 21);
     font-size: 14px;
     margin: 10px;
     padding: 15px;
@@ -67,7 +71,6 @@ h2 {
     height: 600px;
     display: flex;
     align-items: center;
-    background-color:  rgb(247, 230, 242);
     opacity: 0.8;
 }
 
@@ -81,5 +84,50 @@ h2 {
     color: rgb(80, 26, 73);
     font-weight: 200;
     cursor: pointer;
-    box-shadow: 5px 10px #888888;
+    box-shadow: 3px 6px #747474;
+}
+
+.chat-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-main p {
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid rgb(80, 26, 73);
+    height: 30px;
+    padding: 10px 15px;
+    box-shadow: 3px 6px #747474;
+    font-size: 20px;
+}
+
+#question-select {
+    height: 45px;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.animate__animated.animate__slideInUp {
+    animation-duration: 4s;
+}
+
+#menult {
+    background-color: #ffb14b;
+    border: none;
+    cursor: pointer;
+}
+
+#top-cat {
+    width: 80px;
+    height: auto;
+}
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50px;
 }

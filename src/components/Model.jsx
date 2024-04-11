@@ -23,7 +23,11 @@ function Model() {
 
   return (
     <>
-      <button id="menult" onClick={navigateToHome}><div className="menuName"><FontAwesomeIcon icon={faHome} /></div></button>
+      <div className='topbar'>
+        <button id="menult" style={{ fontSize: '24px', padding: '10px' }} onClick={navigateToHome}><div className="menuName"><FontAwesomeIcon icon={faHome} /></div></button>
+        <h3>Best Cat Food Finder</h3>
+        <img id='top-cat' src='cat-clear.png'></img>
+      </div>
       <main>
         <div className='main-menu'>
             {!reportresult?
@@ -31,7 +35,7 @@ function Model() {
             <div className='report-area'>
               <div className='summary-text'>
                 <div className='summarytext-area'>
-                  <h2>Voice from Our Customers</h2>
+                  <h2> 👥 Summary of Customer Review 👥</h2>
                   <p>{reportresult[0]}</p>
                 </div>
               </div>
