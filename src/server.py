@@ -60,7 +60,7 @@ def get_chat():
 
 @app.route("/")
 def index():
-    return "Welcome to the Customer Review Summary Report!"
+    return "Welcome to the fine-tuned LLAMA-2!"
 
 # Run the Flask app
 if __name__ == '__main__':
