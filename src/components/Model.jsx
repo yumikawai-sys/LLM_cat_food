@@ -39,7 +39,7 @@ function Model() {
                   {reportresult[1] ? (
                       <PieChart keywords={reportresult[1]} />
                   ) : (
-                      <p>No emotions data available</p>
+                      <p>No emotion data available</p>
                   )}
               </div>
             </div>    
