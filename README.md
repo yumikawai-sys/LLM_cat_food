@@ -1,9 +1,9 @@
 # Project Name
-Business Report
-I believe negative reviews are full of insights for your business to grow, however, it is time consuming for humans to read all those reviews and sometimes mentally challenging.
+LLAMA-2 Fine Tuning
+It is time consuming for humans to read all those reviews. This fine-tuned LLM can summarize customer reviews and answer questions to find the best product they need.
 
 ## Description
-This project is to fine-tune LLAMA-2 to generate a summary of customer reviews as well as conduct sentiment analysis based on the summary.
+This project is to fine-tune LLAMA-2 to generate a summary of customer reviews as well as conduct sentiment analysis based on the summary. In addition, trained with custom questions to give some advice to find the best cat food.
 
 ## Installation
 1. Clone the repository.
