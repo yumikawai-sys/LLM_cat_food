@@ -6,21 +6,20 @@ import PieChart from './PieChart';
 import './components.css'
 
 function Model() {
-    const [reportresult, setreportresult] = useState('');
-    const [keywords, setKeywords] = useState('');
+    const [reportresult, setreportresult] = useState([]);
     const navigate = useNavigate();
     const navigateToHome = () => {
       navigate('/');
     };
     
     function callmodel() {
-        const result = 'temp result';
-        const temp = [{percent: 20, emotion:'annoyed'},{percent: 30, emotion:'anger'},{percent: 50, emotion:'dissapointment'}]
-        setreportresult(result);
-        setKeywords(temp)
+        fetch('http://localhost:5000/summarize')
+        .then(response => response.json())
+        .then(data => setreportresult(data))
+        .catch(error => console.error('Error fetching data:', error));
     }
 
-    useEffect(()=>callmodel, [])
+    useEffect(()=>callmodel(), [])
 
   return (
     <>
@@ -32,11 +31,16 @@ function Model() {
             <div className='report-area'>
               <div className='summary-text'>
                 <div className='summarytext-area'>
-                  <p>{reportresult}</p>
+                  <h2>Voice from Our Customers</h2>
+                  <p>{reportresult[0]}</p>
                 </div>
               </div>
               <div className='graph'>
-                <PieChart keywords={keywords}/>
+                  {reportresult[1] ? (
+                      <PieChart keywords={reportresult[1]} />
+                  ) : (
+                      <p>No emotions data available</p>
+                  )}
               </div>
             </div>    
             }

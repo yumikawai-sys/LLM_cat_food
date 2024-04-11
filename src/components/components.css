@@ -7,7 +7,7 @@ main {
 }
 
 h2 {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 .main-menu {
@@ -26,11 +26,12 @@ h2 {
     color: rgb(80, 26, 73);
     font-weight: 400;
     cursor: pointer;
+    box-shadow: 5px 10px #888888;
 }
 
 .report-area {
     width: 1800px;
-    height: 600px;
+    height: 700px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -47,13 +48,18 @@ h2 {
 
 .summarytext-area {
     width: 480px;
-    height: 590px;
-    border: 1px solid rgb(248, 195, 232);
+    height: 600px;
     color: rgb(80, 26, 73);
     margin: 10px;
+    padding: 5px;
 }
 .summarytext-area p {
-    color: rgb(80, 26, 73);
+    color: rgb(169, 6, 148);
+    font-size: 14px;
+    margin: 10px;
+    padding: 15px;
+    border: 4px white solid;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .graph {
@@ -75,4 +81,5 @@ h2 {
     color: rgb(80, 26, 73);
     font-weight: 200;
     cursor: pointer;
+    box-shadow: 5px 10px #888888;
 }

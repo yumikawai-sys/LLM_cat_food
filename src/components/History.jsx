@@ -18,7 +18,7 @@ function History() {
     setHistories(result)
   }
 
-  useEffect(()=> getHistories, [])
+  useEffect(()=> getHistories(), [])
 
   return (
     <>

@@ -4,7 +4,6 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import './components.css'
 
 function Main() {
-//   const [showBottom, setshowBottom] = useState(false)
     const navigate = useNavigate();
     const navigateToHome = () => {
         navigate('/');
