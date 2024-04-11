@@ -7,8 +7,8 @@ os.environ['GRADIENT_WORKSPACE_ID'] = "d0cf43aa-349e-48e0-8dfa-7195e68845a8_work
 
 def main():
     with Gradient() as gradient:
-        base_model = gradient.get_base_model(base_model_slug="nous-hermes2")
-        new_model_adapter = base_model.create_model_adapter(name="My Model")
+        base_model = gradient.get_base_model(base_model_slug="llama2-7b-chat")
+        new_model_adapter = base_model.create_model_adapter(name="LLAMA-Model")
 
         samples = [
             {"inputs": "### Instruction: What is the best cat food? \n\n### Response: High-quality protein sources with essential nutrients."},

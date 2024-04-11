@@ -38,8 +38,9 @@ def get_summary_from_colab():
 def get_chat():
     try:
         # Load the ID
-        with open("fine_tuned_model_adapter_id.pkl", "rb") as f:
+        with open("../fine_tuned_model_adapter_id.pkl", "rb") as f:
             model_adapter_id = pickle.load(f)
+        print('model_adapter_id', model_adapter_id)
         
         # Retrieve the model adapter using its ID
         gradient = Gradient()
@@ -51,7 +52,7 @@ def get_chat():
                 raise ValueError("No question provided")
         
         response = fine_tuned_model_adapter.complete(query=question, max_generated_token_count=100).generated_output
-
+        print('response', response)
         return jsonify(response)
     
     except Exception as e:
