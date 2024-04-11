@@ -41,26 +41,16 @@ def get_chat():
         with open("fine_tuned_model_adapter_id.pkl", "rb") as f:
             model_adapter_id = pickle.load(f)
         
-        print('test1', model_adapter_id)
-        
         # Retrieve the model adapter using its ID
         gradient = Gradient()
         fine_tuned_model_adapter = gradient.get_model_adapter(model_adapter_id=model_adapter_id)
         
-        print('test2')
-        
-        # Example question
-        # question = "What is the best cat food for senior cats?"
-
         # Get question from frontend
         question = request.args.get('question', '')
         if not question:
                 raise ValueError("No question provided")
-        print('question', question)
         
-        # Use the fine-tuned model adapter to generate a response
         response = fine_tuned_model_adapter.complete(query=question, max_generated_token_count=100).generated_output
-        print("Response:", response)
 
         return jsonify(response)
     
