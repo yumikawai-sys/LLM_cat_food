@@ -16,6 +16,7 @@ function Chat() {
       // Adjust height of p tag based on its content
       const pTag = document.getElementById('chat-text');
       if (pTag) {
+        pTag.style.width = '800px';
           pTag.style.height = 'auto'; // Reset height to auto to recalculate
           pTag.style.height = pTag.scrollHeight + 'px'; // Set height to scrollHeight
       }
