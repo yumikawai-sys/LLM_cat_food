@@ -29,6 +29,18 @@ h2 {
     box-shadow: 3px 6px #747474;
 }
 
+#main-buttons {
+    width: 300px;
+    height: 70px;
+    border-radius: 10px;
+    border: 2px solid rgb(80, 26, 73);
+    font-size: 16px;
+    color: rgb(80, 26, 73);
+    font-weight: 1000;
+    cursor: pointer;
+    box-shadow: 3px 6px #b09d71;
+}
+
 .report-area {
     width: 1800px;
     height: 700px;
@@ -129,4 +141,5 @@ h2 {
     align-items: center;
     justify-content: flex-start;
     height: 50px;
+    margin-left: 180px;
 }
