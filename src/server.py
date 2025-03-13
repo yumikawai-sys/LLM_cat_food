@@ -6,9 +6,6 @@ import pickle
 from gradientai import Gradient
 import os
 
-os.environ['GRADIENT_ACCESS_TOKEN'] = "OqLq3ZTkNbj2FVlsWxUA9HuFbktEtxVA"
-os.environ['GRADIENT_WORKSPACE_ID'] = "d0cf43aa-349e-48e0-8dfa-7195e68845a8_workspace"
-
 app = Flask(__name__)
 # CORS(app) * Specify 5173' CORS(app) is not enough
 CORS(app, origins='http://localhost:5173')
